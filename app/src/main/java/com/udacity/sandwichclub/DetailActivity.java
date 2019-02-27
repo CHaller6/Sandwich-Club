@@ -43,7 +43,8 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        populateUI();
+        // Populate the user interface on this sandwich's detailed activity
+        populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -59,8 +60,22 @@ public class DetailActivity extends AppCompatActivity {
     /**
      * TODO
      */
-    private void populateUI() {
-        //
+    private void populateUI(Sandwich sandwich) {
+        // Check to make sure that the sandwich exists, and return null if it doens't
+
+        /* Set the text of the alsoKnownAs TextView. If there isn't any information,
+           set the TextView to say "This information isn't available" */
+
+        /* Set the text of the ingredients TextView. If there isn't any information,
+           set the TextView to say "This information isn't available" */
+            /* For each item in the array of ingredients, append it to a string
+               separated by commas */
+
+        /* Set the text of the description TextView. If there isn't any information,
+           set the TextView to say "This information isn't available" */
+
+        /* Set the text of the place of origin TextView. If there isn't any information,
+           set the TextView to say "This information isn't available" */
 
 
     }
