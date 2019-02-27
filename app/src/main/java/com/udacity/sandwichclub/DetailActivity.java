@@ -106,6 +106,12 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     /**
+     * This helper method is used to set the text of an input TextView
+     * to the input String's value. It first checks to see if the input
+     * String is empty, and sets the input TextView's text to a
+     * message that indicates that that information is not available.
+     * Otherwise, it sets the TextView's text to the value of the
+     * input String.
      *
      * @param contentText  The text that is to be set in the TextView
      * @param view  The TextView that needs it's text set

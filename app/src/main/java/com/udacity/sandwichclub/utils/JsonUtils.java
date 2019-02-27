@@ -14,7 +14,11 @@ import java.util.List;
 public class JsonUtils {
 
     /**
-     * TODO
+     * This method takes a Sandwich object represented in JSON form and parses
+     * it's various components, such as ingredients, description, and so forth,
+     * into Strings and lists for use elsewhere. It will create a new Sandwich object,
+     * populate that Sandwich object's data members with the information extracted from
+     * the input JSON string, and return that Sandwich object.
      *
      * @param json  The string form of the JSON that needs to be parsed.
      * @return  A Sandwich object created from the JSON string, with the revelent data members filled in.
@@ -54,8 +58,6 @@ public class JsonUtils {
 
             // Extract ingredients array
             JSONArray ingredientsArray = sandwichJSON.getJSONArray("ingredients");
-
-            // For each item in JSON array, store the value in a string array
             List<String> ingredients = new ArrayList<>();
             for (int i = 0; i < ingredientsArray.length(); i++) {
                 ingredients.add(ingredientsArray.getString(i));
