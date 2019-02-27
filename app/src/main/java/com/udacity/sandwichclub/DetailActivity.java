@@ -73,40 +73,49 @@ public class DetailActivity extends AppCompatActivity {
         /* Set the text of the alsoKnownAs TextView. If there isn't any information,
            set the TextView to say "This information isn't available" */
         TextView alsoKnownAsTV = (TextView) findViewById(R.id.also_known_tv);
-
-        /* For each item in the array of alsoKnownAs names, append it to a string
-           separated by commas */
         List<String> altNamesList = sandwich.getAlsoKnownAs();
         String altNames = "";
         for (String item : altNamesList) {
             altNames += item + " | ";
         }
-        alsoKnownAsTV.setText(altNames);
+        setTextView(altNames, alsoKnownAsTV);
 
 
         /* Set the text of the ingredients TextView. If there isn't any information,
            set the TextView to say "This information isn't available" */
         TextView ingredientsTV = (TextView) findViewById(R.id.ingredients_tv);
-
-        /* For each item in the array of ingredients, append it to a string
-               separated by commas */
         List<String> ingredientsList = sandwich.getIngredients();
         String ingredientsString = "";
         for (String item : ingredientsList) {
             ingredientsString += item + " | ";
         }
-        ingredientsTV.setText(ingredientsString);
+        setTextView(ingredientsString, ingredientsTV);
 
 
         /* Set the text of the description TextView. If there isn't any information,
            set the TextView to say "This information isn't available" */
         TextView descriptionTV = (TextView) findViewById(R.id.description_tv);
-        descriptionTV.setText(sandwich.getDescription());
+        setTextView(sandwich.getDescription(), descriptionTV);
 
 
         /* Set the text of the place of origin TextView. If there isn't any information,
            set the TextView to say "This information isn't available" */
         TextView placeOfOriginTV = (TextView) findViewById(R.id.origin_tv);
-        placeOfOriginTV.setText(sandwich.getPlaceOfOrigin());
+        setTextView(sandwich.getPlaceOfOrigin(), placeOfOriginTV);
+
+    }
+
+    /**
+     *
+     * @param contentText  The text that is to be set in the TextView
+     * @param view  The TextView that needs it's text set
+     */
+    private void setTextView (String contentText, TextView view) {
+        if (contentText.isEmpty()) {
+            view.setText(R.string.missing_info_message);
+        }
+        else {
+            view.setText(contentText);
+        }
     }
 }
